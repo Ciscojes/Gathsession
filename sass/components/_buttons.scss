@@ -1,0 +1,25 @@
+@use "../abstracts/variables" as vars;
+
+.button {
+  display: inline-flex;
+  min-height: 48px;
+  align-items: center;
+  justify-content: center;
+  padding: 0 22px;
+  border-radius: 999px;
+  color: #fff;
+  background: vars.$color-primary;
+  font-weight: 700;
+  text-decoration: none;
+  transition: background 180ms ease, transform 180ms ease;
+
+  &:hover {
+    background: vars.$color-primary-dark;
+    transform: translateY(-2px);
+  }
+
+  &:focus-visible {
+    outline: 3px solid rgb(38 64 101 / 30%);
+    outline-offset: 3px;
+  }
+}

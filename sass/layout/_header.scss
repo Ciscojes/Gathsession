@@ -1,0 +1,44 @@
+@use "../abstracts/variables" as vars;
+
+.site-header {
+  position: sticky;
+  z-index: 10;
+  top: 0;
+  display: flex;
+  min-height: 72px;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 clamp(20px, 6vw, 80px);
+  border-bottom: 1px solid vars.$color-border;
+  background: rgb(255 255 255 / 82%);
+
+  .brand {
+    color: vars.$color-primary-dark;
+    font-family: vars.$font-heading;
+    font-size: 1.45rem;
+    font-weight: 700;
+    text-decoration: none;
+  }
+
+  nav {
+    display: flex;
+    gap: clamp(12px, 3vw, 22px);
+
+    a {
+      color: vars.$color-muted;
+      font-size: 0.9rem;
+      font-weight: 600;
+      text-decoration: none;
+
+      &:hover {
+        color: vars.$color-primary;
+      }
+
+      &:focus-visible {
+        border-radius: 3px;
+        outline: 2px solid vars.$color-primary;
+        outline-offset: 4px;
+      }
+    }
+  }
+}

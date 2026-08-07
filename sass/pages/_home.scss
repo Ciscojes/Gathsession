@@ -1,0 +1,121 @@
+@use "../abstracts/variables" as vars;
+@use "../abstracts/mixins" as mixins;
+
+.hero {
+  display: grid;
+  min-height: 68vh;
+  place-items: center;
+  padding: 72px 22px;
+  background:
+    radial-gradient(circle at 75% 25%, rgb(196 139 163 / 35%), transparent 30%),
+    linear-gradient(135deg, #fff 0%, vars.$color-background 100%);
+
+  &__content {
+    width: min(720px, 100%);
+    text-align: center;
+  }
+
+  &__visual {
+    display: grid;
+    width: min(420px, 90%);
+    place-items: center;
+
+    img {
+      filter: drop-shadow(0 24px 30px rgb(73 45 56 / 18%));
+    }
+  }
+
+  &__eyebrow {
+    color: vars.$color-primary;
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+  }
+
+  h1 {
+    margin-top: 12px;
+    font-size: clamp(2.7rem, 8vw, 5.6rem);
+  }
+
+  &__description {
+    max-width: 590px;
+    margin: 24px auto 30px;
+    color: vars.$color-muted;
+  }
+
+  @include mixins.breakpoint(tablet) {
+    grid-template-columns: minmax(0, 1.15fr) minmax(280px, 0.85fr);
+    padding-inline: clamp(32px, 7vw, 100px);
+
+    &__content {
+      text-align: left;
+    }
+
+    &__description {
+      margin-inline: 0;
+    }
+  }
+}
+
+.services {
+  width: min(1120px, calc(100% - 40px));
+  margin: 0 auto;
+  padding: 80px 0;
+
+  > h2 {
+    margin: 8px 0 30px;
+    font-size: clamp(2rem, 5vw, 3.2rem);
+  }
+
+  &__grid {
+    display: grid;
+    gap: 18px;
+
+    @include mixins.breakpoint(tablet) {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+}
+
+.section-label {
+  color: vars.$color-primary;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.service-card {
+  padding: 28px;
+  border: 1px solid vars.$color-border;
+  border-radius: vars.$radius-medium;
+  background: vars.$color-surface;
+  box-shadow: vars.$shadow-card;
+
+  h3 {
+    margin-bottom: 10px;
+    font-size: 1.45rem;
+  }
+
+  p {
+    color: vars.$color-muted;
+  }
+}
+
+.contact {
+  display: grid;
+  justify-items: center;
+  gap: 18px;
+  padding: 80px 22px;
+  background: vars.$color-surface;
+  text-align: center;
+
+  h2 {
+    font-size: clamp(2rem, 5vw, 3.2rem);
+  }
+
+  > p:not(.section-label) {
+    color: vars.$color-muted;
+  }
+}
