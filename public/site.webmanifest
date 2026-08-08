@@ -1,0 +1,11 @@
+{
+  "short_name": "Gathsession",
+  "name": "Gathsession",
+  "icons": [
+    { "src": "./favicon.svg", "type": "image/svg+xml", "sizes": "any" }
+  ],
+  "start_url": "./",
+  "background_color": "#2b2d38",
+  "theme_color": "#2b2d38",
+  "display": "standalone"
+}

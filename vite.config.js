@@ -1,13 +1,29 @@
 import { defineConfig } from "vite";
 
 export default defineConfig({
-  // Relative assets work both locally and under a GitHub Pages project URL.
+  // Rutas relativas para que los recursos funcionen en GitHub Pages.
   base: "./",
   server: {
     watch: {
-      // OneDrive/WSL can miss native file-system events.
+      // OneDrive dentro de WSL puede no emitir eventos de cambios fiables.
       usePolling: true,
-      interval: 100,
+      interval: 200,
+    },
+  },
+  build: {
+    outDir: "dist",
+    emptyOutDir: true,
+    rollupOptions: {
+      output: {
+        entryFileNames: "js/app.js",
+        chunkFileNames: "js/[name].js",
+        assetFileNames: (assetInfo) => {
+          const originalName = assetInfo.names?.[0] ?? assetInfo.name ?? "";
+          return originalName.endsWith(".css")
+            ? "css/style.css"
+            : "assets/[name][extname]";
+        },
+      },
     },
   },
 });

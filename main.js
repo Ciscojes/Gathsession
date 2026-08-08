@@ -1,4 +1,4 @@
-import "../sass/style.scss";
+import "./sass/style.scss";
 
 const yearElement = document.querySelector("#current-year");
 
