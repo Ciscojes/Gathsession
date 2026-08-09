@@ -12,14 +12,13 @@ body {
 }
 
 .container {
-  width: 90%;
-  max-width: 1600px;
+  width: 1240px;
   margin: 0 auto;
 }
 
 .header {
   width: 100%;
-  height: 120px;
+  height: 90px;
 
   display: flex;
   align-items: center;
@@ -32,17 +31,17 @@ body {
 
   &__logo {
     display: block;
-    width: 227px;
-    height: 45px;
+    width: 190px;
+    height: auto;
   }
 
   &__nav {
     ul {
       display: flex;
       align-items: center;
-      gap: 48px;
+      gap: 28px;
       list-style: none;
-      font-size: 18px;
+      font-size: 16px;
     }
   }
 
@@ -77,39 +76,41 @@ body {
 
 .hero {
   display: grid;
-  grid-template-columns: 784px 1fr;
+  grid-template-columns: 600px 608px;
   grid-template-areas: "content visual";
-  gap: 27px;
+  gap: 32px;
 
   &__content {
     grid-area: content;
-    height: 539px;
-    margin-top: 96px;
+    height: auto;
+    margin-top: 38px;
     padding: 0;
   }
 
   &__title {
-    height: 303px;
+    height: auto;
     font-family: "Merriweather", sans-serif;
     font-weight: bold;
-    font-size: 80px;
+    font-size: 62px;
+    line-height: 1.12;
     color: #ffffff;
   }
 
   &__description {
-    margin-top: 24px;
-    width: 648px;
-    height: 120px;
+    margin-top: 18px;
+    width: 550px;
+    height: auto;
     color: #95969c;
+    font-size: 18px;
   }
 
   &__buttons {
     display: flex;
     align-items: center;
     gap: 32px;
-    margin-top: 32px;
-    width: 420px;
-    height: 60px;
+    margin-top: 24px;
+    width: 400px;
+    height: 52px;
   }
 
   &__button {
@@ -123,8 +124,8 @@ body {
   &__button--primary {
     font-family: "Poppins", sans-serif;
     font-weight: 400;
-    font-size: 18px;
-    padding: 16px 70px;
+    font-size: 16px;
+    padding: 10px 48px;
     background-color: #db2a6b;
     border-radius: 16px 16px 16px 0;
   }
@@ -138,7 +139,7 @@ body {
     span {
       font-family: "Poppins", sans-serif;
       font-weight: 600;
-      font-size: 18px;
+      font-size: 16px;
     }
   }
 
@@ -150,6 +151,67 @@ body {
       width: 100%;
       height: 100%;
       transform: rotate(90deg);
+    }
+  }
+
+  &__visual {
+    grid-area: visual;
+    justify-self: end;
+    width: 575px;
+    margin-top: 20px;
+
+    figure {
+      position: relative;
+      width: 575px;
+      height: 569px;
+      margin: 0;
+    }
+
+    img {
+      position: absolute;
+      width: 175px;
+      object-fit: cover;
+      border-radius: 66px;
+    }
+
+    // Hombre: fondo naranja
+    img:nth-child(1) {
+      top: 198px;
+      left: 202px;
+      height: 371px;
+      background-color: #ff7e29;
+    }
+
+    // Hombre: fondo morado
+    img:nth-child(2) {
+      top: 0;
+      left: 4px;
+      height: 371px;
+      background-color: #6e1fed;
+    }
+
+    // Mujer con gafas
+    img:nth-child(3) {
+      top: 394px;
+      left: 4px;
+      height: 175px;
+      background-color: #db2a6b;
+    }
+
+    // Mujer: fondo turquesa
+    img:nth-child(4) {
+      top: 0;
+      left: 202px;
+      height: 175px;
+      background-color: #60d3d9;
+    }
+
+    // Mujer: fondo amarillo
+    img:nth-child(5) {
+      top: 99px;
+      left: 400px;
+      height: 371px;
+      background-color: #f4b840;
     }
   }
 }
