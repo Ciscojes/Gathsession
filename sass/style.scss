@@ -81,17 +81,16 @@ main {
   display: grid;
   grid-template-columns: 600px 608px;
   grid-template-areas: "content visual";
-  gap: 32px;
+  gap: 40px;
 
   &__content {
     grid-area: content;
-    height: auto;
     margin-top: 38px;
     padding: 0;
+    height: 350px;
   }
 
   &__title {
-    height: auto;
     font-family: "Merriweather", sans-serif;
     font-weight: bold;
     font-size: 62px;
@@ -102,7 +101,6 @@ main {
   &__description {
     margin-top: 18px;
     width: 550px;
-    height: auto;
     color: #95969c;
     font-size: 18px;
   }
@@ -158,6 +156,7 @@ main {
   }
 
   &__visual {
+    position: relative;
     grid-area: visual;
     justify-self: end;
     width: 575px;
@@ -165,20 +164,21 @@ main {
 
     figure {
       position: relative;
+      z-index: 1;
       width: 575px;
       height: 569px;
       margin: 0;
     }
 
-    img {
+    figure > img {
       position: absolute;
-      width: 175px;
+      width: 140px;
       object-fit: cover;
-      border-radius: 66px;
+      border-radius: 55px;
     }
 
     // Hombre: fondo naranja
-    img:nth-child(1) {
+    figure > img:nth-child(1) {
       top: 198px;
       left: 202px;
       height: 371px;
@@ -186,7 +186,7 @@ main {
     }
 
     // Hombre: fondo morado
-    img:nth-child(2) {
+    figure > img:nth-child(2) {
       top: 0;
       left: 4px;
       height: 371px;
@@ -194,15 +194,15 @@ main {
     }
 
     // Mujer con gafas
-    img:nth-child(3) {
+    figure > img:nth-child(3) {
       top: 394px;
       left: 4px;
-      height: 175px;
+      height: 140px;
       background-color: #db2a6b;
     }
 
     // Mujer: fondo turquesa
-    img:nth-child(4) {
+    figure > img:nth-child(4) {
       top: 0;
       left: 202px;
       height: 175px;
@@ -210,19 +210,43 @@ main {
     }
 
     // Mujer: fondo amarillo
-    img:nth-child(5) {
+    figure > img:nth-child(5) {
       top: 99px;
       left: 400px;
       height: 371px;
       background-color: #f4b840;
     }
   }
+
+  &__eclipses {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+
+    img {
+      position: absolute;
+      max-width: none;
+    }
+
+    img:first-child {
+      top: 65px;
+      left: -4px;
+      width: 803px;
+    }
+
+    img:last-child {
+      top: 267px;
+      left: 176px;
+      width: 620px;
+    }
+  }
 }
 
 .community-options {
   position: absolute;
-  left: 136px;
+  left: 50%;
   bottom: 1rem;
+  transform: translateX(-50%);
 
   &__list {
     width: fit-content;
@@ -232,7 +256,6 @@ main {
     display: flex;
     align-items: center;
     gap: 2.5rem;
-
     list-style: none;
   }
 
