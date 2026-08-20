@@ -2,6 +2,7 @@
 // @use "abstracts/abstracts";
 // @use "vendors/vendors";
 @use "base/base";
+@use "responsive/responsive";
 // @use "components/components";
 // @use "layout/layout";
 // @use "pages/pages";
@@ -287,3 +288,5 @@ main {
     text-align: left;
   }
 }
+
+@include responsive.styles;
